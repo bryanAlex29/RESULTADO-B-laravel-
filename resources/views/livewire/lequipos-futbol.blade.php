@@ -56,8 +56,29 @@
         </div>
 
         <div>
-            <button type="submit">Guardar</button>
-            <button type="button" wire:click="reset">Cancelar</button>
+            <button type="submit">GuardarP</button>
+    <button type="submit">{{ $equipo_id ? 'Actualizar' : 'Cargar' }}</button>
+    <button type="button" wire:click="cancelar">Cancelar</button>
+            
+            
+           
+          
         </div>
+         @foreach($equipos as $equipo)
+        <div>
+            <h3>{{ $equipo->nombre }}</h3>
+            <p>Marca: {{ $equipo->marca }}</p>
+            <p>Deporte: {{ $equipo->deporte }}</p>
+            <p>Talla: {{ $equipo->talla }}</p>
+            <p>Material: {{ $equipo->material }}</p>
+            <p>Precio: {{ $equipo->precio }}</p>
+            <p>Stock: {{ $equipo->stock }}</p>
+            <p>Condición: {{ $equipo->condicion }}</p>
+            <p>Estado: {{ $equipo->estado ? 'Activo' : 'Inactivo' }}</p>
+            <button type="button" wire:click="editar({{ $equipo->id }})">Editar</button>
+            <button type="button" wire:click="eliminar({{ $equipo->id }})">Eliminar</button>
+        </div>
+    @endforeach
     </form>
+
 </div>

@@ -19,6 +19,7 @@ Route::middleware(['auth'])->group(function () {
  Route::get('equipos', LequiposFutbol::class)->name('equipos.idex');
 Route::get('equipos/guardar', LequiposFutbol::class)->name('equipos.guardar');
 Route::get('equipos/elimiar', LequiposFutbol::class)->name('equipos.elimiar');
+Route::get('equipos/editar', LequiposFutbol::class)->name('equipos.editar');
 
 
 
